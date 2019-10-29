@@ -15,8 +15,6 @@ public class MonsterAI : MonoBehaviour
     public MonsterMove move;
     private bool canAction;
 
-    Dictionary<AIState, MonsterState> mobAI;
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,12 +27,29 @@ public class MonsterAI : MonoBehaviour
 
         canAction = true;
 
-        // mobAI.Add(AIState.idle, MonsterIdle);
         SetBehaviorOn(AIState.idle);
     }
     private void Update()
     {
-        if (false) // 
+        if (canAction == true)
+        {
+            canAction = false;
+            if (curState == AIState.idle/* && 플레이어와 일직선 상에 있을 때 && 플레이어와 캐릭터가 가까이 있을 때*/)
+            {
+                SetBehaviorOn(curState, AIState.beforeAttack);
+                curState = AIState.attack;
+            }
+            else if (curState != AIState.attack /* && 피격당했을 때*/)
+            {
+                SetBehaviorOn(curState, AIState.hit);
+                curState = AIState.hit;
+            }
+            else
+            {
+                SetBehaviorOn(curState, AIState.move);
+                curState = AIState.move;
+            }
+        }
     }
 
     // setter
@@ -131,4 +146,15 @@ public class MonsterAI : MonoBehaviour
     // getter
     public bool GetCanAction() { return canAction; }
     public Transform GetPlayerTransform() { return player.transform; }
+
+    public IEnumerator Attack()
+    {
+        yield return new WaitForSecondsRealtime(Random.Range(0.1f, 3.0f));
+        yield return null;
+    }
+    public IEnumerator Hit()
+    {
+        yield return new WaitForSecondsRealtime(Random.Range(0.1f, 3.0f));
+        yield return null;
+    }
 }

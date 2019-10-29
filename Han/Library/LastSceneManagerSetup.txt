@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/3DView.unity
+- path: Assets/Scenes/QuerterView.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -59,7 +59,8 @@ public class PlayerAnimator : MonoBehaviour
     }
 
     // setter
-    private void SetCanMove(bool isCan) { if (playerMovement.GetCanMove() != isCan) { playerMovement.SetCanMove(isCan); } }
+    private void SetCanMove(bool isCan) { playerMovement.SetCanMove(isCan); }
+    private void ResetCombo() { playerScript.SetCombo(0); }
     // getter
     public bool GetIsCombo() { return isCombo; }
 }

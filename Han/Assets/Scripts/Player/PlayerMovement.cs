@@ -30,34 +30,40 @@ public class PlayerMovement : MonoBehaviour
                 (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
                 && !(playerAnimator.GetIsCombo()))
             {
+                Debug.Log("1");
                 playerScript.Idle();
                 playerAnimator.Idle();
             }
             // 좌우 이동
             if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && playerScript.transform.position.x > mainCameraTransform.position.x - 8.5f)
             {
+                Debug.Log("2");
                 playerScript.Move(KeyCode.A);
                 playerAnimator.Move(KeyCode.A);
             }
             else if (!Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) && playerScript.transform.position.x < mainCameraTransform.position.x + 8.5f)
             {
+                Debug.Log("2");
                 playerScript.Move(KeyCode.D);
                 playerAnimator.Move(KeyCode.D);
             }
             // 상하 이동
             if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W) && playerScript.transform.position.y > -4.0f)
             {
+                Debug.Log("2");
                 playerScript.Move(KeyCode.S);
                 playerAnimator.Move(KeyCode.S);
             }
             else if (!Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.W) && playerScript.transform.position.y < playerScript.maxUpMove)
             {
+                Debug.Log("2");
                 playerScript.Move(KeyCode.W);
                 playerAnimator.Move(KeyCode.W);
             }
             // 기본 공격
             if (Input.GetKeyDown(KeyCode.L))
             {
+                Debug.Log("3");
                 playerScript.Attack();
                 playerAnimator.Attack();
             }

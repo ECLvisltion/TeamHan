@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float movespeed; // 이동 속도
     public float maxUpMove; // 위로 올라갈 수 있는 최대치
     public int hp;
+    public int combo;
 
     private void Start()
     {
@@ -22,11 +23,15 @@ public class Player : MonoBehaviour
         movespeed = 0.1f;
         maxUpMove = -1.2f;
         hp = 100;
+        combo = 0;
     }
+
+    // setter
+    public void SetCombo(int combo) { this.combo = combo; }
 
     public void Idle()
     {
-        
+
     }
     public void Move(KeyCode key)
     {
@@ -37,7 +42,7 @@ public class Player : MonoBehaviour
     }
     public void Attack()
     {
-
+        combo++;
     }
     public void Attacking()
     {
@@ -47,7 +52,7 @@ public class Player : MonoBehaviour
             if (go != null)
             {
                 Scarecrow s = go.transform.parent.GetComponent<Scarecrow>();
-                if (s != null) { s.Hit(); }
+                if (s != null) { s.Hit(combo); }
             }
         }
     }
