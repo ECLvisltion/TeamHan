@@ -49,6 +49,7 @@ MonoBehaviour:
   transform: {fileID: 0}
   mainCamera: {fileID: 0}
   playerAnimator: {fileID: 0}
+  playerMovement: {fileID: 0}
   monster:
   - {fileID: 0}
   - {fileID: 0}
@@ -58,9 +59,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  movespeed: 0
+  moveSpeed: 0
   maxUpMove: 0
+  dashSpeed: 0
   hp: 0
+  combo: 0
 --- !u!1 &8725773001750257924
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f146121882e9dd24d978f3f62317b614, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3917b7ebd86b7943b3d61799aeda8b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,7 +142,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8725773001750257922

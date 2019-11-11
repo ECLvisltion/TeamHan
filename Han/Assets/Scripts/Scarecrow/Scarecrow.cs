@@ -13,11 +13,26 @@ public class Scarecrow : MonoBehaviour
         saScript = gameObject.GetComponentInChildren<ScarecrowAnimator>();
     }
 
-    public void Hit(int combo)
+    public void Hit(int combo, KeyCode key)
     {
-        saScript.Hit();
-        if (combo == 4) { Instantiate(Resources.Load("Prefabs/Effect/HitF_Strong_00"), new Vector3(transform.position.x, transform.position.y + 0.5f, 0.0f), Quaternion.Euler(0.0f, 0.0f, 0.0f)); }
-        else { Instantiate(Resources.Load("Prefabs/Effect/HitF_Week_00"), new Vector3(transform.position.x, transform.position.y + 0.5f, 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f))); }
+        saScript.Hit(combo);
+        if (combo == 3)
+        {
+            GameObject go;
+            go = Instantiate(Resources.Load<GameObject>("Prefabs/Effect/HitF_Strong0100"), new Vector3(transform.position.x, transform.position.y + 0.5f, 0.0f), Quaternion.Euler(0.0f, 0.0f, 0.0f));
+            if (key == KeyCode.A) { go.transform.localScale = new Vector3(go.transform.localScale.x * -1.0f, go.transform.localScale.y, 1.0f); }
+            if (key == KeyCode.D) { go.transform.localScale = new Vector3(go.transform.localScale.x * +1.0f, go.transform.localScale.y, 1.0f); }
+        }
+        else
+        {
+            Instantiate(Resources.Load<GameObject>("Prefabs/Effect/HitF_Week0100"), new Vector3(transform.position.x, transform.position.y + 0.5f, 0.0f), Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+        }
+        StartCoroutine(Shake());
+    }
+    public void UnderHit()
+    {
+        saScript.UnderHit();
+        Instantiate(Resources.Load("Prefabs/Effect/HitF_Week0100"), new Vector3(transform.position.x, transform.position.y - 1.0f, 0.0f), Quaternion.Euler(0.0f, 0.0f, 0.0f));
         StartCoroutine(Shake());
     }
 

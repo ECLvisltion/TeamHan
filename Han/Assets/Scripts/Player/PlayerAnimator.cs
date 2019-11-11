@@ -35,18 +35,35 @@ public class PlayerAnimator : MonoBehaviour
         else if (key == KeyCode.D) { player.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f); }
         animator.SetInteger("Status", 1);
     }
+    public void Dash(KeyCode key)
+    {
+        isCombo = false;
+        if (key == KeyCode.A) { player.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f); }
+        else if (key == KeyCode.D) { player.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f); }
+        animator.SetInteger("Status", 2);
+    }
     public void Attack()
     {
         isCombo = true;
         animator.SetBool("Attack", true);
     }
+    public void UnderKick()
+    {
+        isCombo = false;
+        animator.SetBool("UnderKick", true);
+    }
     public void Attacking()
     {
         playerScript.Attacking();
     }
+    public void UnderKicking()
+    {
+        playerScript.UnderKicking();
+    }
     public void AttackOver()
     {
         animator.SetBool("Attack", false);
+        animator.SetBool("UnderKick", false);
         animator.SetInteger("Status", -1);
     }
     public void CanMove()
