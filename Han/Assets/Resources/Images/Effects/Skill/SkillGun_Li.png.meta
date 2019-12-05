@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: dc578ad802d47124f9c3fcacc940b48d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5627529419329943357
+    second: SkillGun_Li_0
+  - first:
+      213: -524120460264935490
+    second: SkillGun_Li_1
+  - first:
+      213: -7245473912661573751
+    second: SkillGun_Li_2
+  - first:
+      213: 1489767634955231187
+    second: SkillGun_Li_3
+  - first:
+      213: 5185078790050195314
+    second: SkillGun_Li_4
+  - first:
+      213: -5131982418251619168
+    second: SkillGun_Li_5
+  - first:
+      213: -3215918548383615553
+    second: SkillGun_Li_6
+  - first:
+      213: -5043546446536597804
+    second: SkillGun_Li_7
+  - first:
+      213: -833828028338375567
+    second: SkillGun_Li_8
+  - first:
+      213: -315811534642231663
+    second: SkillGun_Li_9
+  - first:
+      213: 6495833001105509791
+    second: SkillGun_Li_10
+  - first:
+      213: -6832914958598303781
+    second: SkillGun_Li_11
+  - first:
+      213: 6317691122103146222
+    second: SkillGun_Li_12
+  - first:
+      213: 7463986171445274066
+    second: SkillGun_Li_13
+  - first:
+      213: -4247318627001528791
+    second: SkillGun_Li_14
+  - first:
+      213: -5939430762107981929
+    second: SkillGun_Li_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkillGun_Li_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab813bef5362064f90e5734a48bddae
+      internalID: 5627529419329943357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7484006512dec794d87aa33d12896eb8
+      internalID: -524120460264935490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8657f3015dc8f842b48f4206ce290e4
+      internalID: -7245473912661573751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1aadbf854e49d40a3f2aa9fd440e53
+      internalID: 1489767634955231187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2d32eff2fbf8d4a99a0403d5cf4331
+      internalID: 5185078790050195314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe37cf2689dc54c4ebb384a858d31d15
+      internalID: -5131982418251619168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8e044f8719a0a49975e3aa80f4a96c
+      internalID: -3215918548383615553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_7
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09218291e8abc24baad9d33dc2cb985
+      internalID: -5043546446536597804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eae75711e6b12943a6a8fcd85ce8fb4
+      internalID: -833828028338375567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_9
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29961263480c1649a22d388d9ebf556
+      internalID: -315811534642231663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cab306d6604884fa20ef2ddb73ceea
+      internalID: 6495833001105509791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddcc5f0bfd950c489fad9ba6824bd01
+      internalID: -6832914958598303781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee8a41c7086c3c49be007101e6eacc9
+      internalID: 6317691122103146222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca958b3b56cf59f4a8f60e8ad8c47294
+      internalID: 7463986171445274066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec33463804137d4488565be929f3e093
+      internalID: -4247318627001528791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Li_15
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f944eff65b72d42aaad6b810af51d8
+      internalID: -5939430762107981929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 36bc67629765158439f7dc4453362642
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

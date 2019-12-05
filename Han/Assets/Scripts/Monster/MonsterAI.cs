@@ -2,199 +2,425 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AIState { idle = 0, move, beforeAttack, attack, hit, underHit }
+public enum AIState {spawn = -2, die, idle, move, attack, hit1, hit2, hit3, underHit, standing}
 
 public class MonsterAI : MonoBehaviour
 {
-    public GameObject player;
-    public AIState curState;
-    public Monster monster;
-    public MonsterAnimator maScript;
-    public MonsterAttack attack;
-    public MonsterBeforeAttack beforeAttack;
-    public MonsterHit hit;
-    public MonsterIdle idle;
-    public MonsterMove move;
-    
-    public bool isHit;
-    public bool isMove;
-    public bool attackSucceed;
+    private Monster monsterScript;
+    private MonsterSpawn AIspawn;
+    private MonsterDie AIdie;
+    private MonsterIdle AIidle;
+    private MonsterMove AImove;
+    private MonsterAttack AIattack;
+    private MonsterHit1 AIhit1;
+    private MonsterHit2 AIhit2;
+    private MonsterHit3 AIhit3;
+    private MonsterUnderHit AIunderHit;
+    private MonsterStanding AIstanding;
+
+    public int state; // 상태 변환
+    public bool isDie; // 이 몬스터가 사망했을 때,
+    public int isHitCombo; // 공격당할 시 콤보(1~3), 아래공격(4)
+    public bool changeIdle; // idle 상태가 attack이나 move를 사용하기 이전 쿨타임
+    public int changeMove; // move 상태가 attack이나 idle을 사용하기 위한 변수.(공격(1-랜덤), 대기(1-랜덤, 2))
+    public bool changeAttack; // attack 애니메이션이 끝났을 때 다른 state로 이동하기 위한 변수
+    public bool doNextState; // hit3이나 underhit, standing에서 약간의 딜레이를 주기 위한 변수.
+
+    public GameObject monster, player, mainCamera;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        curState = AIState.idle;
-        isHit = false;
-        attackSucceed = false;
-        monster = transform.parent.GetComponent<Monster>();
-        maScript = transform.parent.GetChild(0).GetComponent<MonsterAnimator>();
-        attack = gameObject.GetComponent<MonsterAttack>();
-        beforeAttack = gameObject.GetComponent<MonsterBeforeAttack>();
-        hit = gameObject.GetComponent<MonsterHit>();
-        idle = gameObject.GetComponent<MonsterIdle>();
-        move = gameObject.GetComponent<MonsterMove>();
+        monsterScript = transform.parent.GetComponent<Monster>();
+        AIspawn = gameObject.GetComponent<MonsterSpawn>();
+        AIdie = gameObject.GetComponent<MonsterDie>();
+        AIidle = gameObject.GetComponent<MonsterIdle>();
+        AImove = gameObject.GetComponent<MonsterMove>();
+        AIattack = gameObject.GetComponent<MonsterAttack>();
+        AIhit1 = gameObject.GetComponent<MonsterHit1>();
+        AIhit2 = gameObject.GetComponent<MonsterHit2>();
+        AIhit3 = gameObject.GetComponent<MonsterHit3>();
+        AIunderHit = gameObject.GetComponent<MonsterUnderHit>();
+        AIstanding = gameObject.GetComponent<MonsterStanding>();
 
-        SetBehaviorOn(AIState.idle);
-        StartCoroutine(SetMoveTimer());
+        player = GameObject.FindGameObjectWithTag("Player");
+        monster = transform.parent.gameObject;
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        state = -2;
+        isDie = false;
+        isHitCombo = 0;
+        changeIdle = false;
+        changeMove = 0;
+        changeAttack = false;
+        doNextState = false;
+
+        AIspawn.enabled = true;
+        AIdie.enabled = false;
+        AIidle.enabled = false;
+        AImove.enabled = false;
+        AIattack.enabled = false;
+        AIhit1.enabled = false;
+        AIhit2.enabled = false;
+        AIhit3.enabled = false;
+        AIunderHit.enabled = false;
+        AIstanding.enabled = false;
     }
     private void Update()
     {
-        maScript.SetState((int)curState);
-        if (isHit == true)
+        if (monsterScript.GetHP() <= 0)
         {
-            maScript.SetIsHit(isHit);
-            isHit = false;
+            isDie = true;
         }
 
-        switch (curState) // State 변환 조건
+        if (state == -2) // AIspawn
         {
-            case AIState.idle:
-                if (Mathf.Abs(player.transform.position.x - transform.position.x) <= 1.0f && // 플레이어와 캐릭터가 일직선상에 있을 때
-                    Vector3.Distance(player.transform.position, transform.position) >= 1.0f) // 플레이어가 몬스터랑 가까이 있을 때
-                {
-                    SetBehaviorOn(AIState.idle, AIState.beforeAttack);
-                }
+            if (monster.transform.position.x > mainCamera.transform.position.x - 8.0f &&
+                monster.transform.position.x < mainCamera.transform.position.x + 8.0f)
+            {
+                SetState((int)AIState.idle);
+            }
+        }
+        if (state == -1) // AIdie
+        {
 
-                if (isHit == true)
-                {
-                    isHit = false;
-                    SetBehaviorOn(AIState.idle, AIState.hit);
-                }
-                if (isMove == true)
-                {
-                    move.SetRandomKey();
-                    SetBehaviorOn(AIState.idle, AIState.move);
-                }
-                break;
+        }
+        if (state == 0) // AIidle
+        {
+            if (isDie == true)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
 
-            case AIState.move:
-                if (isHit == true)
+            if (isHitCombo == 1)
+            {
+                AImove.SetTempIntZero();
+                if (AImove.GetTempIntIsZero())
                 {
-                    isHit = false;
-                    isMove = false;
-                    SetBehaviorOn(AIState.idle, AIState.hit);
+                    SetState((int)AIState.hit1);
+                    StartCoroutine(EffectOn(1));
                 }
-                if (isMove == false)
+            }
+            else if (isHitCombo == 2)
+            {
+                AImove.SetTempIntZero();
+                if (AImove.GetTempIntIsZero())
                 {
-                    SetBehaviorOn(AIState.move, AIState.idle);
+                    SetState((int)AIState.hit2);
+                    StartCoroutine(EffectOn(2));
                 }
-                break;
-
-            case AIState.beforeAttack:
-
-                break;
-
-            case AIState.attack:
-                if (attackSucceed == true)
+            }
+            else if (isHitCombo == 3)
+            {
+                AImove.SetTempIntZero();
+                if (AImove.GetTempIntIsZero())
                 {
-                    SetBehaviorOn(AIState.attack, AIState.beforeAttack);
+                    SetState((int)AIState.hit3);
+                    StartCoroutine(EffectOn(3));
                 }
-                else if (Random.Range(0, 2) == 1)
+            }
+            else if (isHitCombo == 4) // 아래 공격
+            {
+                AImove.SetTempIntZero();
+                if (AImove.GetTempIntIsZero())
                 {
-                    SetBehaviorOn(AIState.attack, AIState.beforeAttack);
+                    SetState((int)AIState.underHit);
+                    StartCoroutine(EffectOn(4));
                 }
-                break;
+            }
 
-            case AIState.hit:
-                break;
+            if (changeIdle == true)
+            {
+                if (monster.transform.position.y == player.transform.position.y &&
+                    Mathf.Abs(monster.transform.position.x - player.transform.position.x) <= 0.5f)
+                {
+                    if (Random.Range(0, 10) < 5)
+                    {
+                        SetState((int)AIState.attack);
+                    }
+                    else
+                    {
+                        SetState((int)AIState.move);
+                    }
+                }
+                else
+                {
+                    SetState((int)AIState.move);
+                }
+            }
+        }
+        if (state == 1) // AImove
+        {
+            if (isDie == true)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+
+            if (isHitCombo == 1)
+            {
+                SetState((int)AIState.hit1);
+                StartCoroutine(EffectOn(1));
+            }
+            else if (isHitCombo == 2)
+            {
+                SetState((int)AIState.hit2);
+                StartCoroutine(EffectOn(2));
+            }
+            else if (isHitCombo == 3)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+            else if (isHitCombo == 4) // 아래 공격
+            {
+                SetState((int)AIState.underHit);
+                StartCoroutine(EffectOn(4));
+            }
+
+            if (changeMove == 1)
+            {
+                if (Random.Range(0, 10) < 5)
+                {
+                    SetState((int)AIState.attack);
+                }
+                else
+                {
+                    SetState((int)AIState.idle);
+                }
+            }
+            else if (changeMove == 2)
+            {
+                SetState((int)AIState.idle);
+            }
+        }
+        if (state == 2) // AIattack
+        {
+            if (isDie == true)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+
+            if (isHitCombo == 1)
+            {
+                SetState((int)AIState.hit1);
+                StartCoroutine(EffectOn(1));
+            }
+            else if (isHitCombo == 2)
+            {
+                SetState((int)AIState.hit2);
+                StartCoroutine(EffectOn(2));
+            }
+            else if (isHitCombo == 3)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+            else if (isHitCombo == 4) // 아래 공격
+            {
+                SetState((int)AIState.underHit);
+                StartCoroutine(EffectOn(4));
+            }
+
+            if (changeAttack == true)
+            {
+                SetState((int)AIState.idle);
+            }
+        }
+        if (state == 3) // AIhit1
+        {
+            if (isDie == true)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+
+            if (isHitCombo == 0)
+            {
+                SetState((int)AIState.idle);
+            }
+            else if (isHitCombo == 2)
+            {
+                SetState((int)AIState.hit2);
+                StartCoroutine(EffectOn(2));
+            }
+            else if (isHitCombo == 3)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+            else if (isHitCombo == 4) // 아래 공격
+            {
+                SetState((int)AIState.underHit);
+                StartCoroutine(EffectOn(4));
+            }
+        }
+        if (state == 4) // AIhit2
+        {
+            if (isDie == true)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+
+            if (isHitCombo == 0)
+            {
+                SetState((int)AIState.idle);
+            }
+            else if (isHitCombo == 3)
+            {
+                SetState((int)AIState.hit3);
+                StartCoroutine(EffectOn(3));
+            }
+            else if (isHitCombo == 4) // 아래 공격
+            {
+                SetState((int)AIState.underHit);
+                StartCoroutine(EffectOn(4));
+            }
+        }
+        if (state == 5) // AIhit3
+        {
+            if (doNextState == true)
+            {
+                doNextState = false;
+                if (isDie == true)
+                {
+                    SetState((int)AIState.die);
+                }
+                else
+                {
+                    SetState((int)AIState.standing);
+                }
+            }
+        }
+        if (state == 6) // AIunderHit
+        {
+            if (doNextState == true)
+            {
+                doNextState = false;
+                SetState((int)AIState.idle);
+            }
+        }
+        if (state == 7) // AIstanding
+        {
+            if (doNextState == true)
+            {
+                doNextState = false;
+                SetState((int)AIState.idle);
+            }
         }
     }
 
     // setter
-    /// <summary>
-    /// 몬스터의 행동을 설정할 때 사용
-    /// 몬스터의 전 행동을 알 수 없을 때 사용하는 함수
-    /// </summary>
-    /// <param name="nextState">다음 행동</param>
-    public void SetBehaviorOn(AIState nextState)
+    private void SetState(int state)
     {
-        attack.enabled = false;
-        beforeAttack.enabled = false;
-        hit.enabled = false;
-        idle.enabled = false;
-        move.enabled = false;
+        if (this.state == state) { return; }
+        this.state = state;
 
-        switch (nextState)
+        AIspawn.enabled = false;
+        AIdie.enabled = false;
+        AIidle.enabled = false;
+        AImove.enabled = false;
+        AIattack.enabled = false;
+        AIhit1.enabled = false;
+        AIhit2.enabled = false;
+        AIhit3.enabled = false;
+        AIunderHit.enabled = false;
+        AIstanding.enabled = false;
+
+        switch (state)
         {
-            case AIState.idle:
-                idle.enabled = true;
+            case -1:
+                AIdie.enabled = true;
                 break;
 
-            case AIState.move:
-                move.enabled = true;
+            case 0:
+                changeIdle = false;
+                AIidle.enabled = true;
+                StartCoroutine(ChangingIdleState());
                 break;
 
-            case AIState.beforeAttack:
-                beforeAttack.enabled = true;
+            case 1:
+                changeMove = 0;
+                AImove.enabled = true;
                 break;
 
-            case AIState.attack:
-                attack.enabled = true;
+            case 2:
+                changeAttack = false;
+                AIattack.enabled = true;
                 break;
 
-            case AIState.hit:
-                hit.enabled = true;
+            case 3:
+                AIhit1.enabled = true;
+                break;
+
+            case 4:
+                AIhit2.enabled = true;
+                break;
+
+            case 5:
+                AIhit3.enabled = true;
+                break;
+
+            case 6:
+                AIunderHit.enabled = true;
+                break;
+
+            case 7:
+                AIstanding.enabled = true;
                 break;
         }
     }
     /// <summary>
-    /// 몬스터의 행동을 설정할 때 사용
-    /// 몬스터의 전 행동을 알 때 사용하는 함수
+    /// hit의 combo는 1~3, underhit는 4
     /// </summary>
-    /// <param name="beforeState">이전 행동</param>
-    /// <param name="nextState">다음 행동</param>
-    public void SetBehaviorOn(AIState beforeState, AIState nextState)
+    public void SetAttackCombo(int combo)
     {
-        switch (beforeState)
-        {
-            case AIState.idle:
-                idle.enabled = false;
-                break;
-
-            case AIState.move:
-                move.enabled = false;
-                break;
-
-            case AIState.beforeAttack:
-                beforeAttack.enabled = false;
-                break;
-
-            case AIState.attack:
-                attack.enabled = false;
-                break;
-
-            case AIState.hit:
-                hit.enabled = false;
-                break;
-        }
-        switch (nextState)
-        {
-            case AIState.idle:
-                idle.enabled = true;
-                break;
-
-            case AIState.move:
-                move.enabled = true;
-                break;
-
-            case AIState.beforeAttack:
-                beforeAttack.enabled = true;
-                break;
-
-            case AIState.attack:
-                attack.enabled = true;
-                break;
-
-            case AIState.hit:
-                hit.enabled = true;
-                break;
-        }
+        isHitCombo = combo;
     }
-    public void SetIsHit(bool isHit) { this.isHit = isHit; }
-    public IEnumerator SetMoveTimer()
+    /// <summary>
+    /// 1 = 랜덤으로 공격 혹은 대기, 2 = 대기
+    /// </summary>
+    public void SetChangeMove(int number)
     {
-        yield return new WaitForSeconds(Random.Range(0.1f, 3.0f));
-        if (curState == AIState.idle) { isMove = true; }
+        changeMove = number;
+    }
+    public void SetChangeAttackOn()
+    {
+        changeAttack = true;
+    }
+    public void SetDoNextStateTrue()
+    {
+        doNextState = true;
+    }
+    // getter
+    public int GetState() { return state; }
+
+    private IEnumerator ChangingIdleState()
+    {
+        yield return new WaitForSeconds(Random.Range(1.0f, 3.0f));
+        changeIdle = true;
+        yield return null;
+    }
+    private IEnumerator EffectOn(int combo)
+    {
+        yield return new WaitForSeconds(0.02f);
+        switch (combo)
+        {
+            case 1:
+                AIhit1.SetEffectOn();
+                break;
+            case 2:
+                AIhit2.SetEffectOn();
+                break;
+            case 3:
+                AIhit3.SetEffectOn();
+                break;
+            case 4:
+                AIunderHit.SetEffectOn();
+                break;
+        }
         yield return null;
     }
 }

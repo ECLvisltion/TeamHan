@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     public GameObject mainCamera; // 메인 카메라
     public PlayerAnimator playerAnimator; // 플레이어 애니메이션
     public PlayerMovement playerMovement; // 플레이어 무브먼트
-    public GameObject[] monster = new GameObject[8];
+    public GameObject[] monster = new GameObject[16];
 
     public float moveSpeed; // 이동 속도
     public float maxUpMove; // 위로 올라갈 수 있는 최대치
     public float dashSpeed; // 대시 속도
-    public int hp;
+    public int hp, damage;
     public int combo;
 
     private void Start()
@@ -26,7 +26,15 @@ public class Player : MonoBehaviour
         maxUpMove = -1.2f;
         dashSpeed = 0.5f;
         hp = 100;
+        damage = 1;
         combo = 0;
+    }
+    private void Update()
+    {
+        if (hp == 0)
+        {
+
+        }
     }
 
     // setter
@@ -94,7 +102,11 @@ public class Player : MonoBehaviour
             if (go != null)
             {
                 Monster m = go.transform.parent.GetComponent<Monster>();
-                //if (m != null) { m.Hit(combo); }
+                if ((m != null) && (m.GetMonsterState() <= 4) && (m.GetMonsterState() >= 0))
+                {
+                    m.SetHit(combo);
+                    m.SetHPDecrease(damage);
+                }
 
                 Scarecrow s = go.transform.parent.GetComponent<Scarecrow>();
                 if (s != null)
@@ -119,17 +131,31 @@ public class Player : MonoBehaviour
             if (go != null)
             {
                 Monster m = go.transform.parent.GetComponent<Monster>();
-                //if (m != null) { m.Hit(combo); }
+                if (m != null)
+                {
+                    m.SetHit(4);
+                    m.SetHPDecrease(damage);
+                }
 
                 Scarecrow s = go.transform.parent.GetComponent<Scarecrow>();
                 if (s != null) { s.UnderHit(); }
             }
         }
     }
+    public void Hit(int damage)
+    {
+        // 애니메이션 추가
+        hp -= damage;
+        if (hp <= 0)
+        {
+            playerAnimator.Die();
+            playerMovement.enabled = false;
+        }
+    }
 
     public void SetMonsterHitbox(GameObject monster)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 16; i++)
         {
             if (this.monster[i] == null)
             {
@@ -140,11 +166,12 @@ public class Player : MonoBehaviour
     }
     public void DeleteMonsterHitbox(GameObject monster)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 16; i++)
         {
             if (this.monster[i] == monster)
             {
                 this.monster[i] = null;
+                return;
             }
         }
     }

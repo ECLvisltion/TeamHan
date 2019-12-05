@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4420666811125984704}
   - component: {fileID: 3002263226280719455}
-  - component: {fileID: 4420666811125984767}
+  - component: {fileID: 2695612820428536157}
+  - component: {fileID: 8922895980670295967}
   - component: {fileID: 4420666811125984766}
+  - component: {fileID: 856500605874814890}
+  - component: {fileID: 5982578158187857932}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -45,7 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776dda67508d43b4aa5f601345e1531b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4420666811125984767
+  sceneManager: {fileID: 0}
+  fade: {fileID: 0}
+  cutScene: {fileID: 0}
+  cutSceneScript: {fileID: 0}
+--- !u!114 &2695612820428536157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,10 +61,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 4420666811125984765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aeae370a1c53104ea4e6059c8fe7c42, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e7d1ed534e94ab419fb8ab98a610a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockPosition: 0
+--- !u!114 &8922895980670295967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420666811125984765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318acef07bec22b44b563f87af2f24f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  monster:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &4420666811125984766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +114,32 @@ MonoBehaviour:
   canDashA: 1
   canDashD: 1
   isDash: 0
+--- !u!114 &856500605874814890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420666811125984765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aeae370a1c53104ea4e6059c8fe7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
+  lockPosition: 0
+--- !u!114 &5982578158187857932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420666811125984765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ed4c343463a5c41bdd4c8ca2f7e823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

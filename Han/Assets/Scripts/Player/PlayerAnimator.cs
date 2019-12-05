@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-
     public GameObject gameManager;
     public PlayerMovement playerMovement;
     public GameObject player;
@@ -66,6 +65,11 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool("UnderKick", false);
         animator.SetInteger("Status", -1);
     }
+    public void Die()
+    {
+        animator.SetInteger("Status", 3);
+    }
+
     public void CanMove()
     {
         SetCanMove(true);

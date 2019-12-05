@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: 8fcefb23d1e8e254b9dc57719ac2697c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5212975679163146400
+    second: SkillGun_Gam_0
+  - first:
+      213: 7837599924870022311
+    second: SkillGun_Gam_1
+  - first:
+      213: 8871358439477438192
+    second: SkillGun_Gam_2
+  - first:
+      213: 5231798453440112032
+    second: SkillGun_Gam_3
+  - first:
+      213: 859743384788921348
+    second: SkillGun_Gam_4
+  - first:
+      213: 227726004603042690
+    second: SkillGun_Gam_5
+  - first:
+      213: 3332648026652459935
+    second: SkillGun_Gam_6
+  - first:
+      213: 4360832258005462450
+    second: SkillGun_Gam_7
+  - first:
+      213: -3637913440775010301
+    second: SkillGun_Gam_8
+  - first:
+      213: 1730754221564903606
+    second: SkillGun_Gam_9
+  - first:
+      213: 3880354323853565640
+    second: SkillGun_Gam_10
+  - first:
+      213: -2725514269987691390
+    second: SkillGun_Gam_11
+  - first:
+      213: -4971199420113010290
+    second: SkillGun_Gam_12
+  - first:
+      213: 7800379723897917717
+    second: SkillGun_Gam_13
+  - first:
+      213: 138649334757787392
+    second: SkillGun_Gam_14
+  - first:
+      213: 7660369104246603594
+    second: SkillGun_Gam_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkillGun_Gam_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3968c8832773e1e478305f3911b31131
+      internalID: 5212975679163146400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4f818c9b8574644a75de62530b5283
+      internalID: 7837599924870022311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0770ef365e8ea942a88562a17e1c102
+      internalID: 8871358439477438192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3072
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26980a79f5d97a4479fb7900ae356067
+      internalID: 5231798453440112032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0be6cca30980d249bbf39655c32f460
+      internalID: 859743384788921348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12ab9293034cba45bdccc6ce0f35daf
+      internalID: 227726004603042690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2057
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f67a7a2e2641d43a7b49158eb9fbf6
+      internalID: 3332648026652459935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_7
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2048
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f928ddc5a66f78d40afddfef2bb95b3c
+      internalID: 4360832258005462450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d4a46742ebea848b6ab396babdb18d
+      internalID: -3637913440775010301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_9
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b23ffe8e3c1974f93344605f0170d5
+      internalID: 1730754221564903606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b9040a1cf1c7840beb9a85756e7c79
+      internalID: 3880354323853565640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1024
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a7010575a402a4a9187b4dc8cd663a
+      internalID: -2725514269987691390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb62732cdee5e74e987ed106ec17419
+      internalID: -4971199420113010290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b141149245d204e9b582c340595353
+      internalID: 7800379723897917717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3abb50c1204307c4fb1ae68e86029d71
+      internalID: 138649334757787392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillGun_Gam_15
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3343780f5b951c43b1a34cc8765f2fa
+      internalID: 7660369104246603594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fff2f43f67c9b4a43b17b0952dfbdb11
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

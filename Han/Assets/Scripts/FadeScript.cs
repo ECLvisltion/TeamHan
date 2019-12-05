@@ -16,12 +16,16 @@ public class FadeScript : MonoBehaviour
 
         image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.PageUp)) { StartCoroutine(FadeOut()); }
         if (Input.GetKeyDown(KeyCode.PageDown)) { StartCoroutine(FadeIn()); }
+        if (Input.GetKeyDown(KeyCode.Home)) { StartCoroutine(FadeOut(5, 0.0f, 0.4f)); }
+        if (Input.GetKeyDown(KeyCode.End)) { StartCoroutine(FadeIn(5, 0.4f, 0.0f)); }
     }
+
+    // getter
+    public float GetFadeTickTime() { return fadeTickTime; }
 
     public IEnumerator FadeOut()
     {
@@ -37,6 +41,20 @@ public class FadeScript : MonoBehaviour
         image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
         yield return null;
     }
+    public IEnumerator FadeOut(int frame, float startAlpha, float finalAlpha)
+    {
+        fadeAlpha = startAlpha;
+        image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+        for (int i = 0; i < frame; i++)
+        {
+            fadeAlpha = i * ((finalAlpha - startAlpha) / frame);
+            image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+            yield return new WaitForSeconds(fadeTickTime);
+        }
+        fadeAlpha = finalAlpha;
+        image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+        yield return null;
+    }
     public IEnumerator FadeIn()
     {
         fadeAlpha = 1.0f;
@@ -48,6 +66,20 @@ public class FadeScript : MonoBehaviour
             yield return new WaitForSeconds(fadeTickTime);
         }
         fadeAlpha = 0.0f;
+        image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+        yield return null;
+    }
+    public IEnumerator FadeIn(int frame, float startAlpha, float finalAlpha)
+    {
+        fadeAlpha = startAlpha;
+        image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+        for (int i = 0; i < frame; i++)
+        {
+            fadeAlpha = startAlpha - (i * ((startAlpha - finalAlpha) / frame));
+            image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
+            yield return new WaitForSeconds(fadeTickTime);
+        }
+        fadeAlpha = finalAlpha;
         image.color = new Color(0.0f, 0.0f, 0.0f, fadeAlpha);
         yield return null;
     }

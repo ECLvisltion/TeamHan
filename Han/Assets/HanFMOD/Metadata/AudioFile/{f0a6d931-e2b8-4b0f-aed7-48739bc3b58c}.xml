@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{f0a6d931-e2b8-4b0f-aed7-48739bc3b58c}">
+		<property name="assetPath">
+			<value>DirtShoe4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.42325000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4c199030-1072-45e0-8608-b323818e3ff5}</destination>
+		</relationship>
+	</object>
+</objects>
