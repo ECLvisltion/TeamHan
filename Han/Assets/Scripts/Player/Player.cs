@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public GameManager gameManager;
     public new Transform transform; // 이 물체의 트랜스폼
     public GameObject mainCamera; // 메인 카메라
     public PlayerAnimator playerAnimator; // 플레이어 애니메이션
@@ -22,9 +24,9 @@ public class Player : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         playerAnimator = gameObject.transform.GetChild(0).GetComponent<PlayerAnimator>();
         playerMovement = GameObject.FindGameObjectWithTag("GameManager").GetComponent<PlayerMovement>();
-        moveSpeed = 0.1f;
+        moveSpeed = 5.0f;
         maxUpMove = -1.2f;
-        dashSpeed = 0.5f;
+        dashSpeed = 25.0f;
         hp = 100;
         damage = 1;
         combo = 0;
@@ -33,7 +35,10 @@ public class Player : MonoBehaviour
     {
         if (hp == 0)
         {
-
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(gameManager.GameOver());
+            }
         }
     }
 
@@ -46,12 +51,20 @@ public class Player : MonoBehaviour
     {
 
     }
+    public void Move(float horizontal, float vertical)
+    {
+        transform.Translate(moveSpeed * horizontal * Time.deltaTime, moveSpeed * vertical * Time.deltaTime, 0.0f);
+        if (transform.position.x < mainCamera.transform.position.x - 8.5f) { transform.position = new Vector2(mainCamera.transform.position.x - 8.5f, transform.position.y); }
+        if (transform.position.x > mainCamera.transform.position.x + 8.5f) { transform.position = new Vector2(mainCamera.transform.position.x + 8.5f, transform.position.y); }
+        if (transform.position.y < mainCamera.transform.position.y - 4.0f) { transform.position = new Vector2(transform.position.x, mainCamera.transform.position.y - 4.0f); }
+        if (transform.position.y > mainCamera.transform.position.y + maxUpMove) { transform.position = new Vector2(transform.position.x, mainCamera.transform.position.y + maxUpMove); }
+    }
     public void Move(KeyCode key)
     {
-        if (key == KeyCode.A) { transform.Translate(-moveSpeed, 0.0f, 0.0f); }
-        else if (key == KeyCode.D) { transform.Translate(moveSpeed, 0.0f, 0.0f); }
-        if (key == KeyCode.S) { transform.Translate(0.0f, -moveSpeed, 0.0f); }
-        else if (key == KeyCode.W) { transform.Translate(0.0f, moveSpeed, 0.0f); }
+        if (key == KeyCode.A) { transform.Translate(-moveSpeed * Time.deltaTime, 0.0f, 0.0f); }
+        else if (key == KeyCode.D) { transform.Translate(moveSpeed * Time.deltaTime, 0.0f, 0.0f); }
+        if (key == KeyCode.S) { transform.Translate(0.0f, -moveSpeed * Time.deltaTime, 0.0f); }
+        else if (key == KeyCode.W) { transform.Translate(0.0f, moveSpeed * Time.deltaTime, 0.0f); }
     }
     public IEnumerator Dash(KeyCode key)
     {
@@ -74,12 +87,12 @@ public class Player : MonoBehaviour
         {
             if (key == KeyCode.A)
             {
-                if (transform.position.x > mainCamera.transform.position.x - 8.5f) { transform.Translate(-dashSpeed, 0.0f, 0.0f); }
+                if (transform.position.x > mainCamera.transform.position.x - 8.5f) { transform.Translate(-dashSpeed * Time.deltaTime, 0.0f, 0.0f); }
                 else { transform.position = new Vector3(mainCamera.transform.position.x - 8.5f, transform.position.y, transform.position.z); }
             }
             else if (key == KeyCode.D)
             {
-                if (transform.position.x < mainCamera.transform.position.x + 8.5f) { transform.Translate(+dashSpeed, 0.0f, 0.0f); }
+                if (transform.position.x < mainCamera.transform.position.x + 8.5f) { transform.Translate(+dashSpeed * Time.deltaTime, 0.0f, 0.0f); }
                 else { transform.position = new Vector3(mainCamera.transform.position.x + 8.5f, transform.position.y, transform.position.z); }
             }
             
@@ -150,6 +163,20 @@ public class Player : MonoBehaviour
         {
             playerAnimator.Die();
             playerMovement.enabled = false;
+        }
+    }
+    public void Skill(int skillNum)
+    {
+        switch (skillNum)
+        {
+            case 1:
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
         }
     }
 

@@ -14,4 +14,5 @@ public class MonsterAnimatorScript : MonoBehaviour
     public void IsAttack() { monsterAI.SetChangeAttackOn(); }
     public void ResetAttackCombo() { monsterAI.SetAttackCombo(0); }
     public void NextState() { monsterAI.SetDoNextStateTrue(); }
+    public void SetState(int state) { monsterAI.SetState(state); }
 }

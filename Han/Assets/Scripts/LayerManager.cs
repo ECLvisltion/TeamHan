@@ -4,43 +4,56 @@ using UnityEngine;
 
 public class LayerManager : MonoBehaviour
 {
+    private const int monsterCount = 16;
+    
     public GameObject player;
-    public GameObject[] monster = new GameObject[16];
+    public GameObject[] monster;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
     private void Update()
     {
-        /*
         monster = GameObject.FindGameObjectsWithTag("Monster");
-        for (int i = 0; i < 16; i++)
+
+        for(int i = 0; i < monster.Length; i++)
         {
-            while (true)
-            {
-                if (i >= 16) { break; }
+            int layer = 0;
 
-                if (monster[i] == null) { i++; }
-                else { break; }
+            if (monster[i].transform.position.y > player.transform.position.y)
+            {
+                layer = -1;
             }
-            if (i >= 16) { break; }
-
-            for (int j = 0; j < 16; j++)
+            else
             {
-                while (true)
+                layer = 1;
+            }
+
+            for (int j = 0; j < monster.Length; j++)
+            {
+                if (monster[i] != monster[j])
                 {
-                    if (j >= 16) { break; }
-
-                    if (monster[j] == null || i == j) { j++; }
-                    else { break; }
+                    if (layer > 0)
+                    {
+                        if (monster[j].transform.position.y < player.transform.position.y)
+                        {
+                            if (monster[i].transform.position.y < monster[j].transform.position.y) { layer++; }
+                        }
+                    }
+                    else
+                    {
+                        if (monster[j].transform.position.y > player.transform.position.y)
+                        {
+                            if (monster[i].transform.position.y > monster[j].transform.position.y) { layer--; }
+                        }
+                    }
                 }
-                if (j >= 16) { break; }
-
-                if (monster[i] == monster[j]) { monster[j] = null; }
             }
+
+            monster[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = layer;
         }
-        */
     }
+
+    public int GetMonsterCount() { return monster.Length; }
 }

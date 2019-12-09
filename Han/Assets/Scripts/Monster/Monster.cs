@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
 
         hp = 10;
         damage = 10;
-        speed = 0.05f;
+        speed = 3.0f;
     }
 
     public void Attack()
@@ -74,14 +74,20 @@ public class Monster : MonoBehaviour
     // setter
     public void SetHPDecrease(int decrease)
     {
-        hp -= decrease;
+        if (monsterAI.GetState() != (int)AIState.spawn)
+        {
+            hp -= decrease;
+        }
     }
     /// <summary>
     /// 1~3 : 콤보, 4 : 아래공격
     /// </summary>
     public void SetHit(int combo)
     {
-        monsterAI.SetAttackCombo(combo);
+        if (monsterAI.GetState() != (int)AIState.spawn)
+        {
+            monsterAI.SetAttackCombo(combo);
+        }
     }
     // getter
     public int GetHP() { return hp; }

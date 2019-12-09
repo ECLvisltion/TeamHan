@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2296350625700442505}
   - component: {fileID: 7237653576933043525}
-  - component: {fileID: 3597122540804388585}
+  - component: {fileID: 3738505415494984412}
   m_Layer: 0
   m_Name: SkillFury_Kick
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7225900260704563909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -66,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1848841483
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9ca68a1a3306cc54c9b5fcd20f2ca1e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3597122540804388585
+--- !u!114 &3738505415494984412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7225900260704563909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a630a4b9808b44a44adf96a016305a8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 84ec1df9d91e57542a3955bf808f9bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha: 0
+  sr: {fileID: 0}

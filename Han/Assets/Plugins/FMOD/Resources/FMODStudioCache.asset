@@ -67,7 +67,7 @@ MonoBehaviour:
   Path: event:/Effect/button
   guid: 42a5c94a3e79f047a693c8575c9c54ed
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -75,6 +75,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 552
+--- !u!114 &-8501465773825417033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BGM.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/BGM.bank
+  SubDir: 
+  lastModified: 637103306164118702
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8416724953900014579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/walk/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-8193908898940530551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +138,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/hit/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-8126660904943936118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/swing/category
   m_EditorClassIdentifier: 
   Name: category
   Min: 0
@@ -265,6 +317,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &-4375186218996095580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/crash/scale
+  m_EditorClassIdentifier: 
+  Name: scale
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3966877622800418615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +352,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-3864418585087132771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637086754888975290
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3786070614351449175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/walk/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-3638887239398039248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,12 +402,12 @@ MonoBehaviour:
   Path: event:/Effect/crash
   guid: ffd601f83bae2a4692360df6e4a45030
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -168829803396896803}
+  - {fileID: 4681306041860099359}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -341,7 +445,7 @@ MonoBehaviour:
   lastModified: 637103306164118702
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2728100167665508649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,7 +567,7 @@ MonoBehaviour:
   Path: event:/Effect/dash
   guid: 6310e3dbdbdfb2499005c496998ad88f
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -471,6 +575,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 344
+--- !u!114 &-923872409654902219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Effect.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/Effect.bank
+  SubDir: 
+  lastModified: 637103306165408278
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-913539664090311565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,12 +626,12 @@ MonoBehaviour:
   Path: event:/Effect/walk
   guid: 8e9a746ace982e4a9775dc08c649340d
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 7097098250780391300}
+  - {fileID: -3786070614351449175}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -528,7 +650,7 @@ MonoBehaviour:
   Path: event:/Effect/titleButton
   guid: 24c35816307c8a4caf8124040696b57c
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -552,7 +674,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-132879994179558020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,9 +724,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 5248974073603770728}
-  - {fileID: -3589582397643168568}
-  - {fileID: 8838212115442764846}
-  - {fileID: 5019801770656577858}
+  - {fileID: -8501465773825417033}
+  - {fileID: -923872409654902219}
+  - {fileID: -3864418585087132771}
   EditorEvents:
   - {fileID: 3095302241916472964}
   - {fileID: -319808857001736810}
@@ -619,7 +741,7 @@ MonoBehaviour:
   - {fileID: -3638887239398039248}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5019801770656577858}
+  - {fileID: -3864418585087132771}
   StringsBanks:
   - {fileID: 5248974073603770728}
   stringsBankWriteTime: 637103306165558231
@@ -657,7 +779,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &205431098712611122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,7 +848,7 @@ MonoBehaviour:
   Path: event:/Effect/doorOpen
   guid: 5c05b6f56b2f134c89ab6c635f20aaff
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -734,6 +856,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3069
+--- !u!114 &1064672959619049868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Effect.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/Effect.bank
+  SubDir: 
+  lastModified: 637107605547251002
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1283753705914753234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,12 +958,12 @@ MonoBehaviour:
   Path: event:/Effect/swing
   guid: a185b8c57327ac489384f75611248d99
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 79947911789375527}
+  - {fileID: -8126660904943936118}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -842,6 +982,24 @@ MonoBehaviour:
   Path: Assets/HanFMOD/Build/Desktop/Effect.bank
   SubDir: 
   lastModified: 637103306165408278
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2246214862990825663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BGM.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/BGM.bank
+  SubDir: 
+  lastModified: 637107605544102022
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -877,7 +1035,7 @@ MonoBehaviour:
   Path: event:/Effect/fallDown
   guid: 1e65328469e0504a812f95e059bd0203
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -934,12 +1092,12 @@ MonoBehaviour:
   Path: event:/Effect/hit
   guid: 5e52b482a1b0734384a0440cbddfc253
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8176395073674527361}
+  - {fileID: 4016643906287785966}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -958,7 +1116,7 @@ MonoBehaviour:
   Path: event:/Effect/drawSword
   guid: 92c6767743156043950ca0d69f5da355
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -966,6 +1124,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1579
+--- !u!114 &4016643906287785966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/hit/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4089545514100720395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,7 +1156,7 @@ MonoBehaviour:
   Path: event:/Effect/heal
   guid: ea2a684cee78204dbc6e18091b3ec622
   Banks:
-  - {fileID: 8838212115442764846}
+  - {fileID: -923872409654902219}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1006,6 +1181,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &4473568692796930969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/hit/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4483031865832177377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1215,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &4543619763556098598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/HanFMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637090009850602772
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4663691178409424586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1251,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &4681306041860099359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/crash/scale
+  m_EditorClassIdentifier: 
+  Name: scale
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5019801770656577858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,7 +1285,7 @@ MonoBehaviour:
   lastModified: 637086754888975290
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &5098018390760130426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1334,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/walk/category
+  m_EditorClassIdentifier: 
+  Name: category
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &5858461554609641316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/swing/category
   m_EditorClassIdentifier: 
   Name: category
   Min: 0
@@ -1164,7 +1408,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7408514180303192123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,7 +1514,7 @@ MonoBehaviour:
   lastModified: 637103306165408278
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &9184347010196598539
 MonoBehaviour:
   m_ObjectHideFlags: 0

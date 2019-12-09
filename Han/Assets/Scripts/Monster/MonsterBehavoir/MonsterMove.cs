@@ -58,7 +58,7 @@ public class MonsterMove : MonoBehaviour
 
                 monster.transform.position = Vector3.MoveTowards(monster.transform.position,
                     new Vector3(player.transform.position.x + tempInt * 1.5f, player.transform.position.y, 0.0f),
-                    monsterScript.GetSpeed());
+                    monsterScript.GetSpeed() * Time.deltaTime);
                 break;
 
             case 1: // 화면 아래 이동
@@ -68,7 +68,7 @@ public class MonsterMove : MonoBehaviour
                     monsterAI.SetChangeMove(2);
                 }
 
-                monster.transform.Translate(0.0f, -monsterScript.GetSpeed(), 0.0f);
+                monster.transform.Translate(0.0f, -monsterScript.GetSpeed() * Time.deltaTime, 0.0f);
                 break;
 
             case 2: // 화면 아래 대각선 이동
@@ -116,8 +116,8 @@ public class MonsterMove : MonoBehaviour
                     monsterAI.SetChangeMove(2);
                 }
 
-                monster.transform.Translate(tempInt * monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f,
-                    -monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f, 0.0f);
+                monster.transform.Translate(tempInt * monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f * Time.deltaTime,
+                    -monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f * Time.deltaTime, 0.0f);
                 break;
 
             case 3: // 화면 위로 이동
@@ -127,7 +127,7 @@ public class MonsterMove : MonoBehaviour
                     monsterAI.SetChangeMove(2);
                 }
 
-                monster.transform.Translate(0.0f, monsterScript.GetSpeed(), 0.0f);
+                monster.transform.Translate(0.0f, monsterScript.GetSpeed() * Time.deltaTime, 0.0f);
                 break;
 
             case 4: // 화면 위 대각선 이동
@@ -175,8 +175,8 @@ public class MonsterMove : MonoBehaviour
                     monsterAI.SetChangeMove(2);
                 }
 
-                monster.transform.Translate(tempInt * monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f,
-                    monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f, 0.0f);
+                monster.transform.Translate(tempInt * monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f * Time.deltaTime,
+                    monsterScript.GetSpeed() * Mathf.Sqrt(2.0f) * 0.5f * Time.deltaTime, 0.0f);
                 break;
 
             case 5: // 뒷걸음질
@@ -215,7 +215,7 @@ public class MonsterMove : MonoBehaviour
                     monsterAI.SetChangeMove(2);
                 }
 
-                monster.transform.Translate(tempInt * monsterScript.GetSpeed(), 0.0f, 0.0f);
+                monster.transform.Translate(tempInt * monsterScript.GetSpeed() * Time.deltaTime, 0.0f, 0.0f);
                 break;
         }
     }

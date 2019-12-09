@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1848841483
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eb0c54b216fa8e245842772751f5d754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877dd67b92e4bb548b68e415da61354c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   transform: {fileID: 0}
   mainCamera: {fileID: 0}
   playerAnimator: {fileID: 0}
@@ -270,6 +271,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerScript: {fileID: 0}
   animator: {fileID: 0}
+  mainCamera: {fileID: 0}
   isCombo: 0
 --- !u!1 &8725773002033625798
 GameObject:

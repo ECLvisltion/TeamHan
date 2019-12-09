@@ -67,6 +67,7 @@ public class MonsterAI : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F1)) { SetState((int)AIState.hit3); }
         if (monsterScript.GetHP() <= 0)
         {
             isDie = true;
@@ -313,7 +314,7 @@ public class MonsterAI : MonoBehaviour
     }
 
     // setter
-    private void SetState(int state)
+    public void SetState(int state)
     {
         if (this.state == state) { return; }
         this.state = state;
@@ -396,6 +397,53 @@ public class MonsterAI : MonoBehaviour
     }
     // getter
     public int GetState() { return state; }
+    public int GetScriptState()
+    {
+        if (AIspawn.enabled == true)
+        {
+            return (int)AIState.spawn;
+        }
+        else if (AIdie.enabled == true)
+        {
+            return (int)AIState.die;
+        }
+        else if (AIidle.enabled == true)
+        {
+            return (int)AIState.idle;
+        }
+        else if (AImove.enabled == true)
+        {
+            return (int)AIState.move;
+        }
+        else if (AIattack.enabled == true)
+        {
+            return (int)AIState.attack;
+        }
+        else if (AIhit1.enabled == true)
+        {
+            return (int)AIState.hit1;
+        }
+        else if (AIhit2.enabled == true)
+        {
+            return (int)AIState.hit2;
+        }
+        else if (AIhit3.enabled == true)
+        {
+            return (int)AIState.hit3;
+        }
+        else if (AIunderHit.enabled == true)
+        {
+            return (int)AIState.underHit;
+        }
+        else if (AIstanding.enabled == true)
+        {
+            return (int)AIState.standing;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
     private IEnumerator ChangingIdleState()
     {

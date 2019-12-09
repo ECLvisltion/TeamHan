@@ -21,12 +21,12 @@ public class MonsterSpawn : MonoBehaviour
 
         if (monster.transform.position.x > mainCamera.transform.position.x)
         {
-            monster.transform.Translate(-monsterScript.GetSpeed(), 0.0f, 0.0f);
+            monster.transform.Translate(-monsterScript.GetSpeed() * Time.deltaTime, 0.0f, 0.0f);
             monster.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
         }
         else
         {
-            monster.transform.Translate(monsterScript.GetSpeed(), 0.0f, 0.0f);
+            monster.transform.Translate(monsterScript.GetSpeed() * Time.deltaTime, 0.0f, 0.0f);
             monster.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
